@@ -1,0 +1,21 @@
+{
+  "name": "vue-project",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "BUILD_PATH='./docs' vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@schedule-x/calendar": "^1.59.1",
+    "@schedule-x/theme-default": "^1.59.1",
+    "@schedule-x/vue": "^1.55.0",
+    "vue": "^3.4.29"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "vite": "^5.3.1"
+  }
+}
