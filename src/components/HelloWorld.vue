@@ -18,7 +18,7 @@ import {computed, ref} from 'vue'
 var content;
 const parsed = ref(false);
 var calendarData;
-Papa.parse('./data/CatalogueFormations(Calendrier).csv', {
+Papa.parse('https://corsproxy.io/?https://raw.githubusercontent.com/lab-bnu/calendrier-formations-bnu/4b32b05af3607cf1e04ad32cccb6e16ba472d792/data/CatalogueFormations(Calendrier).csv', {
         header: true,
         delimiter: ";",
         download: true,

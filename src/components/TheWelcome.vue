@@ -17,9 +17,10 @@ var content;
 const parsed = ref(false);
 var calendarData;
 
-Papa.parse('./data/CatalogueFormations(Calendrier).csv', {
+// with proxy to avoid CORS 
+Papa.parse('https://corsproxy.io/?https://raw.githubusercontent.com/lab-bnu/calendrier-formations-bnu/4b32b05af3607cf1e04ad32cccb6e16ba472d792/data/CatalogueFormations(Calendrier).csv', {
         header: true,
-        delimiter: ",",
+        delimiter: "",
         download: true,
         skipEmptyLines: true,
         encoding: "utf-8",
@@ -27,6 +28,7 @@ Papa.parse('./data/CatalogueFormations(Calendrier).csv', {
         console.log("Erreur lors du csv parse:", error, file);
       },
         complete: async function( results ){
+            console.log(results)
             content = results.data
             let count = 0
             
