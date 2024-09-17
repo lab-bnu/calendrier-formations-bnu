@@ -8,36 +8,63 @@ import {
   createViewWeek,
 } from '@schedule-x/calendar'
 import '@schedule-x/theme-default/dist/index.css'
- 
+import moment from 'moment'
+import Papa from 'papaparse'
+import {computed, ref} from 'vue'
+
 // Do not use a ref here, as the calendar instance is not reactive, and doing so might cause issues
 // For updating events, use the events service plugin
-const calendarApp = createCalendar({
-  selectedDate: '2023-12-19',
+
+var content;
+const parsed = ref(false);
+var calendarData;
+Papa.parse('./data/CatalogueFormations(Calendrier).csv', {
+        header: true,
+        delimiter: ";",
+        download: true,
+        skipEmptyLines: true,
+        error: function(error, file) {
+        console.log("Erreur lors du csv parse:", error, file);
+      },
+        complete: async function( results ){
+            content = results.data
+            let tab = []
+            let count = 0
+            for (const element of content) {
+              const oneEvent = {
+              id: count,
+             title: element["Formation"],
+             start: moment(element["Date"], 'DD-MM-YYYY').format('YYYY-MM-DD'),
+             end: moment(element["Date"], 'DD-MM-YYYY').format('YYYY-MM-DD'),
+              }
+              tab.push(oneEvent)
+            }
+            count = count+1
+            
+            calendarData = tab
+            parsed.value = true;
+
+        }
+      })
+      
+
+const calendarApp = computed(()=>
+createCalendar({
+  selectedDate: moment().format('YYYY-MM-DD'),
   views: [
-    createViewDay(),
+    //createViewDay(),
     createViewWeek(),
     createViewMonthGrid(),
     createViewMonthAgenda(),
   ],
-  events: [
-    {
-      id: 1,
-      title: 'Event 1',
-      start: '2023-12-19',
-      end: '2023-12-19',
-    },
-    {
-      id: 2,
-      title: 'Event 2',
-      start: '2023-12-20 12:00',
-      end: '2023-12-20 13:00',
-    },
-  ],
+  events: calendarData
 })
+)
+
 </script>
  
 <template>
-  <div>
+  <div v-if = "parsed">
     <ScheduleXCalendar :calendar-app="calendarApp" />
   </div>
 </template>

@@ -12,7 +12,10 @@
     "@schedule-x/calendar": "^1.59.1",
     "@schedule-x/theme-default": "^1.59.1",
     "@schedule-x/vue": "^1.55.0",
-    "vue": "^3.4.29"
+    "moment": "^2.30.1",
+    "papaparse": "^5.4.1",
+    "vue": "^3.4.29",
+    "vue-papa-parse": "^3.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
