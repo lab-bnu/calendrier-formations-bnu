@@ -4,12 +4,13 @@
         <template #icon>
             <DocumentationIcon/>
         </template>
-        <template #heading> {{title}}  </template>
+        <template #heading> {{date}}, {{hour}} -- {{title}}  </template>
         {{description}}
         <br/>
-        <a :href= "link" target="_blank" rel="noopener"> Inscription ici </a>
+        <a v-if = "link != '' " :href= "link" target="_blank" rel="noopener"> Inscription ici </a>
+        <a v-if = "link == '' " >Entrée Libre </a>
     </WelcomeItem> 
-    {{date}}
+    
     </div> 
 </template>
 
@@ -26,7 +27,8 @@ const props = defineProps({
     title: String, 
     description: String,
     date: String,
-    link: String
+    link: String,
+    hour: String
 }
 );
 

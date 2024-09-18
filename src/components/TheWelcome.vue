@@ -53,6 +53,6 @@ const events = ref()
 
 <template>
 <div v-if = "parsed" v-for="event in events">
-   <Event v-if = "moment(event.Date, 'DD-MM-YYYY') >= moment()" :date="event.Date" :title="event.Formation" :description="event.Description" :link="event.Lien"/> 
+   <Event v-if = "moment(event.Date, 'DD-MM-YYYY') >= moment()" :date="event.Date" :hour="event.Horaire" :title="event.Formation" :description="event.Description" :link="event.Lien"/> 
 </div>
 </template>
