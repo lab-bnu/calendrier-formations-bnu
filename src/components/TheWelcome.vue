@@ -28,15 +28,15 @@ Papa.parse('https://corsproxy.io/?https://raw.githubusercontent.com/lab-bnu/cale
         console.log("Erreur lors du csv parse:", error, file);
       },
         complete: async function( results ){
-            console.log(results)
             content = results.data
             let count = 0
             
             for (const element of content) {
               element['id'] = count
+              count = count+1  
             }
 
-            count = count+1  
+            content = content.sort((a, b) => moment(a.Date, 'DD-MM-YYYY') - moment(b.Date, 'DD-MM-YYYY') )
             // calendarData = content
             events.value = content
             parsed.value = true

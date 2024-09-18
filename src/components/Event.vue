@@ -8,7 +8,7 @@
         {{description}}
         <br/>
         <a v-if = "link != '' " :href= "link" target="_blank" rel="noopener"> Inscription ici </a>
-        <a v-if = "link == '' " >Entrée Libre </a>
+        <a v-else>Entrée Libre </a>
     </WelcomeItem> 
     
     </div> 
