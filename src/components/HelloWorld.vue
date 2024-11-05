@@ -34,8 +34,8 @@ Papa.parse('https://corsproxy.io/?https://raw.githubusercontent.com/lab-bnu/cale
               const oneEvent = {
               id: count,
              title: element["Formation"],
-             start: moment(element["Date"], 'DD-MM-YYYY').format('YYYY-MM-DD'),
-             end: moment(element["Date"], 'DD-MM-YYYY').format('YYYY-MM-DD'),
+             start: moment(element["Date"].trim(), 'DD-MM-YYYY').format('YYYY-MM-DD'),
+             end: moment(element["Date"].trim(), 'DD-MM-YYYY').format('YYYY-MM-DD'),
               }
               tab.push(oneEvent)
             }
