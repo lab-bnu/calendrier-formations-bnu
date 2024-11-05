@@ -6,10 +6,12 @@ import TheWelcome from './components/TheWelcome.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-    <div class="wrapper">
-      <HelloWorld />
-    </div>
+    <section class="cal_wrapper">
+      <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+      <div class="wrapper">
+        <HelloWorld />
+      </div>
+    </section>
   </header>
 
   <main>
@@ -20,6 +22,7 @@ import TheWelcome from './components/TheWelcome.vue'
 <style scoped>
 header {
   line-height: 1.5;
+  max-height: 100vh;
 }
 
 .logo {
@@ -34,8 +37,12 @@ header {
     padding-right: calc(var(--section-gap) / 2);
   }
 
+  .cal_wrapper{
+    position: fixed;
+  }
+
   .logo {
-    margin: 0 2rem 0 0;
+    /* margin: 0 2rem 0 0; */
   }
 
   header .wrapper {

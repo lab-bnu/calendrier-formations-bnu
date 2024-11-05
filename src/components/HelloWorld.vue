@@ -65,6 +65,6 @@ createCalendar({
  
 <template>
   <div v-if = "parsed">
-    <ScheduleXCalendar :calendar-app="calendarApp" />
+    <ScheduleXCalendar :calendar-app/>
   </div>
 </template>
