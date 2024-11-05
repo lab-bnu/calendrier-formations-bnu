@@ -17,8 +17,10 @@ var content;
 const parsed = ref(false);
 var calendarData;
 
+const random = Math.random()
+
 // with proxy to avoid CORS 
-Papa.parse('https://corsproxy.io/?https://raw.githubusercontent.com/lab-bnu/calendrier-formations-bnu/refs/heads/main/data/CatalogueFormations(Calendrier).csv', {
+Papa.parse('https://corsproxy.io/?https://raw.githubusercontent.com/lab-bnu/calendrier-formations-bnu/refs/heads/main/data/CatalogueFormations(Calendrier).csv%3Frefresh%3D' + random, {
         header: true,
         delimiter: "",
         download: true,
