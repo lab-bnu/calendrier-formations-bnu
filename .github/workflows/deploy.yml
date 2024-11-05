@@ -49,5 +49,9 @@ jobs:
       #- name: Move ./dist to ./docs
       #  run: rm -rf docs && mv ./dist ./docs
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        #id: deployment
+        #uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          #github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
