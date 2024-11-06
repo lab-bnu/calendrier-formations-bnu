@@ -7,7 +7,9 @@ import TheWelcome from './components/TheWelcome.vue'
 <template>
   <header>
     <section class="cal_wrapper">
-      <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+      <!-- <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" /> -->
+       <h1>BNU</h1>
+       <h2>Ateliers Lab et formations usager·e·s</h2>
       <div class="wrapper">
         <HelloWorld />
       </div>
@@ -20,6 +22,22 @@ import TheWelcome from './components/TheWelcome.vue'
 </template>
 
 <style scoped>
+
+h1{
+  margin: 10px 0;
+  padding: 1px 10px;
+  border-radius: 5px;
+  color: hsla(160, 100%, 37%, 1);
+  background: linear-gradient(45deg, #283939, transparent);
+  font-size: xx-large;
+}
+h2{
+  margin: 10px 0;
+  padding: 1px 10px;
+  border-radius: 5px;
+  color: hsla(160, 100%, 37%, 1);
+  font-size: large;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
