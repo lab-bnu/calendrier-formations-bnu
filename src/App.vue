@@ -24,12 +24,14 @@ import TheWelcome from './components/TheWelcome.vue'
 <style scoped>
 
 h1{
+  font-family: sans-serif;
   margin: 10px 0;
   padding: 1px 10px;
   border-radius: 5px;
   color: hsla(160, 100%, 37%, 1);
-  background: linear-gradient(45deg, #283939, transparent);
+  background: linear-gradient(45deg, hsl(160deg 100% 37% / 20%), transparent);
   font-size: xx-large;
+  letter-spacing: 3px;
 }
 h2{
   margin: 10px 0;

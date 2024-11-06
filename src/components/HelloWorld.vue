@@ -18,7 +18,8 @@ import {computed, ref} from 'vue'
 var content;
 const parsed = ref(false);
 var calendarData;
-Papa.parse('https://corsproxy.io/?https://raw.githubusercontent.com/lab-bnu/calendrier-formations-bnu/refs/heads/main/data/CatalogueFormations(Calendrier).csv', {
+const random = Math.random()
+Papa.parse('https://corsproxy.io/?https://raw.githubusercontent.com/lab-bnu/calendrier-formations-bnu/refs/heads/main/data/CatalogueFormations(Calendrier).csv%3Frefresh%3D' + random, {
         header: true,
         delimiter: ",",
         download: true,
