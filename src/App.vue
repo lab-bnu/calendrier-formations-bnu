@@ -37,7 +37,7 @@ h2{
   margin: 10px 0;
   padding: 1px 10px;
   border-radius: 5px;
-  color: hsla(160, 100%, 37%, 1);
+  color:  var(--sx-color-primary-container);
   font-size: large;
 }
 header {

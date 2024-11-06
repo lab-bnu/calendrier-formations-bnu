@@ -36,5 +36,14 @@ const props = defineProps({
 
 </script>
 
+<style scoped>
+
+.event:hover {
+    background-color: #e9deff0d;
+    border-radius: 5px;
+}
+
+</style>
+
 
 
