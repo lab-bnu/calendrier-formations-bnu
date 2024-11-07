@@ -1,5 +1,5 @@
 <template>
-     <div class="event">
+     <div class="event" :data-date="date">
    <WelcomeItem>
         <template #icon>
             <DocumentationIcon/>
