@@ -61,9 +61,49 @@ const calendarApp = computed(() =>
     events: calendarData,
     locale: 'fr-FR',
     callbacks: {
-      onClickDate(date) {
-        console.log('onClickDate', date)
-      }
+
+      onRangeUpdate(range) {
+      console.log('new calendar range start date', range.start)
+      console.log('new calendar range end date', range.end)
+    },
+ 
+    /**
+     * Is called when an event is updated through drag and drop
+     * */
+    onEventUpdate(updatedEvent) {
+      console.log('onEventUpdate', updatedEvent)
+    },
+ 
+    /**
+    * Is called when an event is clicked
+    * */
+    onEventClick(calendarEvent) {
+      console.log('onEventClick', calendarEvent)
+    },
+ 
+    /**
+    * Is called when clicking a date in the month grid
+    * */
+    onClickDate(date) {
+      console.log('onClickDate', date) // e.g. 2024-01-01
+    },
+ 
+    /**
+    * Is called when clicking somewhere in the time grid of a week or day view
+    * */
+    onClickDateTime(dateTime) {
+      console.log('onClickDateTime', dateTime) // e.g. 2024-01-01 12:37
+    },
+ 
+    /**
+    * Is called when selecting a day in the month agenda
+    * */
+    onClickAgendaDate(date) {
+      const frenchDate = moment(date).format('DD/MM/YYYY')
+      document.querySelector(`[data-date="${frenchDate}"]`)?.scrollIntoView({ behavior: 'smooth' })
+    },
+
+
     }
   })
 )
