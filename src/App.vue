@@ -1,7 +1,6 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
-  console.log('gwppprdgfb')
 </script>
 
 <template>
@@ -37,9 +36,17 @@ h2{
   margin: 10px 0;
   padding: 1px 10px;
   border-radius: 5px;
-  color:  var(--sx-color-primary-container);
+  color:var(--sx-color-on-primary-container);
+  /* color:light-dark(var(--sx-color-on-primary-container), var(--sx-color-primary-container)); */
   font-size: large;
 }
+
+@media (prefers-color-scheme: dark) {
+  h2{
+    color: var(--sx-color-primary-container)
+  }
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
