@@ -63,8 +63,6 @@ const calendarApp = computed(() =>
     callbacks: {
       onClickDate(date) {
         console.log('onClickDate', date)
-        // calendarControls.setView(viewWeek.name);
-        // calendarControls.setDate(date);
       }
     }
   })
