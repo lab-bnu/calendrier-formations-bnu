@@ -9,6 +9,7 @@ import Papa from 'papaparse'
 import {computed, ref} from 'vue'
 import Event from "./Event.vue"
 import moment from 'moment'
+import { useRoute } from 'vue-router'
 
 // Do not use a ref here, as the calendar instance is not reactive, and doing so might cause issues
 // For updating events, use the events service plugin
@@ -16,6 +17,7 @@ import moment from 'moment'
 var content;
 const parsed = ref(false);
 var calendarData;
+const route = useRoute();
 
 const random = Math.random()
 
@@ -39,17 +41,18 @@ Papa.parse('https://corsproxy.io/?https://raw.githubusercontent.com/lab-bnu/cale
             }
 
             content = content.sort((a, b) => moment(a.Date, 'DD-MM-YYYY') - moment(b.Date, 'DD-MM-YYYY') )
-            // calendarData = content
             events.value = content
             parsed.value = true
+
+
         }
       })
-      
-
-// const events = computed(()=>
-//       calendarData    
-// )
+  
 const events = ref()
+
+// TODO : make list of all tags and ability to filter on tags
+console.log(route.params)
+
 
 </script>
 
