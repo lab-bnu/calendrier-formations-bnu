@@ -38,9 +38,9 @@ Papa.parse('https://corsproxy.io/?https://raw.githubusercontent.com/lab-bnu/cale
         start: moment(element["Date"], 'DD-MM-YYYY').format('YYYY-MM-DD'),
         end: moment(element["Date"], 'DD-MM-YYYY').format('YYYY-MM-DD'),
       }
+      count++
       tab.push(oneEvent)
     }
-    count = count + 1
 
     calendarData = tab
     parsed.value = true;
